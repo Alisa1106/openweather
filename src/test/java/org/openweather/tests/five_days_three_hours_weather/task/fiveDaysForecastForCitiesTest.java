@@ -1,0 +1,24 @@
+package org.openweather.tests.five_days_three_hours_weather.task;
+
+import org.openweather.models.ForecastFiveDays;
+import org.openweather.tests.BaseTest;
+import org.openweather.utils.TestParameter;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class fiveDaysForecastForCitiesTest extends BaseTest {
+
+    public static final String CELSIUS_UNITS = "metric";
+
+    @Test(dataProvider = "Cities", dataProviderClass = TestParameter.class)
+    void feelsLikeAtThreeAmTest(String cityName) {
+        ForecastFiveDays forecastFiveDays = weatherService.sendFiveDaysWeatherByCityNameAndUnitsRequest(cityName, CELSIUS_UNITS).getBody().as(ForecastFiveDays.class);
+        List<org.openweather.models.List> listWeatherAtThreeAm = forecastFiveDays.getList().stream().filter(list -> list.getDateTxt().contains("15:00:00")).collect(Collectors.toList());
+        for (org.openweather.models.List element : listWeatherAtThreeAm) {
+            Assert.assertTrue(element.getMain().getFeelsLike() < 35);
+        }
+    }
+}
