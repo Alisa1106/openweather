@@ -2,6 +2,7 @@ package org.openweather.tests;
 
 import org.openweather.client.HttpClient;
 import org.openweather.client.WeatherService;
+import org.openweather.utils.EnvironmentsReader;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
@@ -11,8 +12,7 @@ public class BaseTest {
 
     @BeforeTest
     public void initTest() {
-        String weatherApiBaseUri = "http://api.openweathermap.org/data/2.5";
-        httpClient = new HttpClient(weatherApiBaseUri);
+        httpClient = new HttpClient(EnvironmentsReader.getEnvironment("QA_ENV"));
         weatherService = new WeatherService(httpClient);
     }
 }
