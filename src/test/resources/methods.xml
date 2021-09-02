@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MethodTestSuite" parallel="methods" thread-count="4">
+    <test name="CurrentInCollection">
+        <classes>
+            <class name="org.openweather.tests.current_weather.collection.ByCityIdTest"/>
+            <class name="org.openweather.tests.current_weather.collection.ByCityNameAndCountryCodeTest"/>
+            <class name="org.openweather.tests.current_weather.collection.ByCityNameCountryCodeAndUnitsTest"/>
+            <class name="org.openweather.tests.current_weather.collection.ByCityNameWithUnitsTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="CurrentInTask">
+        <classes>
+            <class name="org.openweather.tests.current_weather.task.CurrentWeatherForBrestTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="FiveDaysThreeHoursInCollection">
+        <classes>
+            <class name="org.openweather.tests.five_days_three_hours_weather.collection.ByCityIdTest"/>
+            <class name="org.openweather.tests.five_days_three_hours_weather.collection.ByCityNameTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="FiveDaysThreeHoursInTask">
+        <classes>
+            <class name="org.openweather.tests.five_days_three_hours_weather.task.fiveDaysForecastForCitiesTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite>

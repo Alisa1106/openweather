@@ -1,7 +1,6 @@
 package org.openweather.client;
 
 import io.restassured.response.Response;
-import org.openweather.utils.PropertyReader;
 
 public class WeatherService {
 
@@ -12,7 +11,7 @@ public class WeatherService {
     }
 
     public Response sendCurrentWeatherByIdAndUnitsRequest(String cityId, String units) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .currentUri()
                 .cityId(cityId)
                 .units(units)
@@ -21,7 +20,7 @@ public class WeatherService {
     }
 
     public Response sendCurrentWeatherByCityNameAndCountryCodeRequest(String cityName, String countryCode) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .currentUri()
                 .cityName(cityName)
                 .countryCode(countryCode)
@@ -30,7 +29,7 @@ public class WeatherService {
     }
 
     public Response sendCurrentWeatherByCityNameCountryCodeAndUnitsRequest(String cityName, String countryCode, String units) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .currentUri()
                 .cityName(cityName)
                 .countryCode(countryCode)
@@ -40,7 +39,7 @@ public class WeatherService {
     }
 
     public Response sendCurrentWeatherByCityNameModeAndUnitsRequest(String cityName, String mode, String units) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .currentUri()
                 .cityName(cityName)
                 .mode(mode)
@@ -50,7 +49,7 @@ public class WeatherService {
     }
 
     public Response sendCurrentWeatherByCityNameAndUnitRequest(String cityName, String units) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .currentUri()
                 .cityName(cityName)
                 .units(units)
@@ -59,7 +58,7 @@ public class WeatherService {
     }
 
     public Response sendCurrentWeatherByCityName(String cityName) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .currentUri()
                 .cityName(cityName)
                 .build();
@@ -67,7 +66,7 @@ public class WeatherService {
     }
 
     public Response sendCurrentWeatherByCityNameXml(String cityName, String mode) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .currentUri()
                 .cityName(cityName)
                 .mode(mode)
@@ -76,7 +75,7 @@ public class WeatherService {
     }
 
     public Response sendFiveDaysWeatherByCityIdAndUnitsRequest(String cityId, String units) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .forecastUri()
                 .cityId(cityId)
                 .units(units)
@@ -85,7 +84,7 @@ public class WeatherService {
     }
 
     public Response sendFiveDaysWeatherByCityNameAndUnitsRequest(String cityName, String units) {
-        String url = new UrlBuilder(PropertyReader.getProperty("api_key"))
+        String url = new UrlBuilder()
                 .forecastUri()
                 .cityName(cityName)
                 .units(units)

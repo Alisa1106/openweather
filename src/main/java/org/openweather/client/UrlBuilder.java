@@ -1,11 +1,13 @@
 package org.openweather.client;
 
+import org.openweather.utils.Properties;
+
 public class UrlBuilder {
 
     private String url = "";
 
-    public UrlBuilder(String appiId) {
-        url += "appid=" + appiId;
+    public UrlBuilder() {
+        url += "appid=" + new Properties().getApiKey();
     }
 
     public UrlBuilder currentUri() {
