@@ -1,6 +1,8 @@
 package org.openweather.helper;
 
 import io.restassured.response.Response;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.openweather.models.Current;
 import org.openweather.utils.DateFormatter;
 import org.openweather.utils.NodeListBuilder;
@@ -10,10 +12,12 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
+@Log4j
 public class WeatherToCompareConverter {
 
     public static WeatherToCompare convertFromJson(Current current) {
         DateFormatter dateFormatter = new DateFormatter();
+//        log.info("Build object from JSON response");
         return new WeatherToCompare.Builder()
                 .longitude(current.getCoordinates().getLongitude())
                 .latitude(current.getCoordinates().getLatitude())
@@ -38,6 +42,7 @@ public class WeatherToCompareConverter {
             NodeList temperature = nodeListBuilder.getNodeList(response, "temperature");
             NodeList pressure = nodeListBuilder.getNodeList(response, "pressure");
             NodeList timeZone = nodeListBuilder.getNodeList(response, "timezone");
+//            log.info("Build object from XML response");
             return new WeatherToCompare.Builder()
                     .longitude(coordinates.item(0).getAttributes().getNamedItem("lon").getNodeValue())
                     .latitude(coordinates.item(0).getAttributes().getNamedItem("lat").getNodeValue())
@@ -51,6 +56,7 @@ public class WeatherToCompareConverter {
                     .timezone(Integer.parseInt(timeZone.item(0).getTextContent()))
                     .build();
         } catch (ParserConfigurationException | IOException | SAXException e) {
+//            log.fatal("ERROR: " + e.getMessage());
             e.printStackTrace();
         }
         return null;
