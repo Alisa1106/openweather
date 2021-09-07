@@ -42,7 +42,7 @@ public class WeatherToCompareConverter {
             NodeList temperature = nodeListBuilder.getNodeList(response, "temperature");
             NodeList pressure = nodeListBuilder.getNodeList(response, "pressure");
             NodeList timeZone = nodeListBuilder.getNodeList(response, "timezone");
-//            log.info("Build object from XML response");
+            log.info("Build object from XML response");
             return new WeatherToCompare.Builder()
                     .longitude(coordinates.item(0).getAttributes().getNamedItem("lon").getNodeValue())
                     .latitude(coordinates.item(0).getAttributes().getNamedItem("lat").getNodeValue())
@@ -56,7 +56,7 @@ public class WeatherToCompareConverter {
                     .timezone(Integer.parseInt(timeZone.item(0).getTextContent()))
                     .build();
         } catch (ParserConfigurationException | IOException | SAXException e) {
-//            log.fatal("ERROR: " + e.getMessage());
+            log.fatal("ERROR: " + e.getMessage());
             e.printStackTrace();
         }
         return null;
