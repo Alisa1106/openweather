@@ -3,26 +3,26 @@
 <suite name="TestSuite">
     <test name="CurrentInCollection">
         <classes>
-            <class name="org.openweather.tests.current_weather.collection.ByCityIdTest"/>
-            <class name="org.openweather.tests.current_weather.collection.ByCityNameAndCountryCodeTest"/>
-            <class name="org.openweather.tests.current_weather.collection.ByCityNameCountryCodeAndUnitsTest"/>
-            <class name="org.openweather.tests.current_weather.collection.ByCityNameWithUnitsTest"/>
+            <class name="org.openweather.tests.current_weather.ByCityIdTest"/>
+            <class name="org.openweather.tests.current_weather.ByCityNameAndCountryCodeTest"/>
+            <class name="org.openweather.tests.current_weather.ByCityNameCountryCodeAndUnitsTest"/>
+            <class name="org.openweather.tests.current_weather.ByCityNameWithUnitsTest"/>
         </classes>
     </test> <!-- Test -->
     <test name="CurrentInTask">
         <classes>
-            <class name="org.openweather.tests.current_weather.task.CurrentWeatherForBrestTest"/>
+            <class name="org.openweather.tests.current_weather.CurrentWeatherForBrestTest"/>
         </classes>
     </test> <!-- Test -->
     <test name="FiveDaysThreeHoursInCollection">
         <classes>
-            <class name="org.openweather.tests.five_days_three_hours_weather.collection.ByCityIdTest"/>
-            <class name="org.openweather.tests.five_days_three_hours_weather.collection.ByCityNameTest"/>
+            <class name="org.openweather.tests.five_days_three_hours_weather.ByCityIdTest"/>
+            <class name="org.openweather.tests.five_days_three_hours_weather.ByCityNameTest"/>
         </classes>
     </test> <!-- Test -->
     <test name="FiveDaysThreeHoursInTask">
         <classes>
-            <class name="org.openweather.tests.five_days_three_hours_weather.task.fiveDaysForecastForCitiesTest"/>
+            <class name="org.openweather.tests.five_days_three_hours_weather.fiveDaysForecastForCitiesTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

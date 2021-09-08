@@ -1,4 +1,4 @@
-package org.openweather.tests.five_days_three_hours_weather.task;
+package org.openweather.tests.five_days_three_hours_weather;
 
 import org.openweather.models.ForecastFiveDays;
 import org.openweather.tests.BaseTest;

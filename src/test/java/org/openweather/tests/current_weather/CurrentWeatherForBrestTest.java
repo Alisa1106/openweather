@@ -1,4 +1,4 @@
-package org.openweather.tests.current_weather.task;
+package org.openweather.tests.current_weather;
 
 import org.openweather.helper.WeatherToCompareConverter;
 import org.openweather.models.Current;

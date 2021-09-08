@@ -1,6 +1,7 @@
-package org.openweather.tests.current_weather.collection;
+package org.openweather.tests.current_weather;
 
 import org.openweather.models.Current;
+
 import org.openweather.tests.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
