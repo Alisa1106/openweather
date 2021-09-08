@@ -1,26 +1,32 @@
 package org.openweather.models;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Main {
-    @SerializedName("temp")
+    @JsonProperty("temp")
     private double temperature;
-    @SerializedName("feels_like")
+    @JsonProperty("feels_like")
     private double feelsLike;
-    @SerializedName("temp_min")
+    @JsonProperty("temp_min")
     private double temperatureMin;
-    @SerializedName("temp_max")
+    @JsonProperty("temp_max")
     private double temperatureMax;
     private int pressure;
     private int humidity;
-    @SerializedName("sea_level")
+    @JsonProperty("sea_level")
     private int seaLevel;
-    @SerializedName("grnd_level")
+    @JsonProperty("grnd_level")
     private int groundLevel;
-    @SerializedName("temp_kf")
+    @JsonProperty("temp_kf")
     private double tempKf;
 }

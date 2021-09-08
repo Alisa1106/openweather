@@ -13,10 +13,12 @@ public class fiveDaysForecastForCitiesTest extends BaseTest {
 
     public static final String CELSIUS_UNITS = "metric";
 
-    @Test(dataProvider = "Cities", dataProviderClass = TestParameter.class)
+    @Test(dataProvider = "Cities", dataProviderClass = TestParameter.class, description = "Check that in forecast 5 days temperature feels like " +
+            "at 15.00 less than 35 degrees")
     void feelsLikeAtThreeAmTest(String cityName) {
         ForecastFiveDays forecastFiveDays = weatherService.sendFiveDaysWeatherByCityNameAndUnitsRequest(cityName, CELSIUS_UNITS).getBody().as(ForecastFiveDays.class);
-        List<org.openweather.models.List> listWeatherAtThreeAm = forecastFiveDays.getList().stream().filter(list -> list.getDateTxt().contains("15:00:00")).collect(Collectors.toList());
+        List<org.openweather.models.List> listWeatherAtThreeAm = forecastFiveDays.getList().stream().filter(list -> list.getDateTxt()
+                .contains("15:00:00")).collect(Collectors.toList());
         for (org.openweather.models.List element : listWeatherAtThreeAm) {
             Assert.assertTrue(element.getMain().getFeelsLike() < 35);
         }

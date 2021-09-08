@@ -1,8 +1,8 @@
 package org.openweather.helper;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import lombok.extern.log4j.Log4j;
-import lombok.extern.log4j.Log4j2;
 import org.openweather.models.Current;
 import org.openweather.utils.DateFormatter;
 import org.openweather.utils.NodeListBuilder;
@@ -15,9 +15,10 @@ import java.io.IOException;
 @Log4j
 public class WeatherToCompareConverter {
 
+    @Step("Build object from JSON response")
     public static WeatherToCompare convertFromJson(Current current) {
         DateFormatter dateFormatter = new DateFormatter();
-//        log.info("Build object from JSON response");
+        log.info("Build object from JSON response");
         return new WeatherToCompare.Builder()
                 .longitude(current.getCoordinates().getLongitude())
                 .latitude(current.getCoordinates().getLatitude())
@@ -32,6 +33,7 @@ public class WeatherToCompareConverter {
                 .build();
     }
 
+    @Step("Build object from XML response")
     public static WeatherToCompare convertFromXml(Response response) {
         NodeListBuilder nodeListBuilder = new NodeListBuilder();
         try {

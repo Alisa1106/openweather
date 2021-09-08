@@ -16,20 +16,20 @@ public class ByCityNameWithUnitsTest extends BaseTest {
     public static final String XML_MODE = "xml";
     public static final String CELSIUS_UNITS = "metric";
 
-    @Test
+    @Test(description = "Check status code in current weather response by Brest city name, XML mode and Celsius units")
     public void checkStatusCodeTest() {
         Assert.assertEquals(weatherService.sendCurrentWeatherByCityNameModeAndUnitsRequest(BREST_CITY_NAME, XML_MODE, CELSIUS_UNITS)
                 .getStatusCode(), 200);
     }
 
-    @Test
+    @Test(description = "Check header in current weather response by Brest city name, XML mode and Celsius units")
     public void checkResponseHeaderTest() {
         String contentTypeHeader = weatherService.sendCurrentWeatherByCityNameModeAndUnitsRequest(BREST_CITY_NAME, XML_MODE, CELSIUS_UNITS)
                 .getHeader("Content-Type");
         Assert.assertEquals(contentTypeHeader, "application/xml; charset=utf-8");
     }
 
-    @Test
+    @Test(description = "Check body in current weather response by Brest city name, XML mode and Celsius units")
     public void checkResponseBodyTest() throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilder documentBuilder = new DocumentBuilder();
         NodeList nodeList = documentBuilder.getDocument(weatherService.sendCurrentWeatherByCityNameModeAndUnitsRequest

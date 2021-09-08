@@ -1,11 +1,15 @@
 package org.openweather.models;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class List {
     private int dt;
     private Main main;
@@ -16,6 +20,6 @@ public class List {
     private double pop;
     private Rain rain;
     private System sys;
-    @SerializedName("dt_txt")
+    @JsonProperty("dt_txt")
     private String dateTxt;
 }

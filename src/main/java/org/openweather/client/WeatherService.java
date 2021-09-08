@@ -1,9 +1,7 @@
 package org.openweather.client;
 
 import io.restassured.response.Response;
-import lombok.extern.log4j.Log4j;
 
-@Log4j
 public class WeatherService {
 
     HttpClient httpClient;
@@ -18,7 +16,6 @@ public class WeatherService {
                 .cityId(cityId)
                 .units(units)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -28,7 +25,6 @@ public class WeatherService {
                 .cityName(cityName)
                 .countryCode(countryCode)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -39,7 +35,6 @@ public class WeatherService {
                 .countryCode(countryCode)
                 .units(units)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -50,7 +45,6 @@ public class WeatherService {
                 .mode(mode)
                 .units(units)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -60,7 +54,6 @@ public class WeatherService {
                 .cityName(cityName)
                 .units(units)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -69,7 +62,6 @@ public class WeatherService {
                 .currentUri()
                 .cityName(cityName)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -79,7 +71,6 @@ public class WeatherService {
                 .cityName(cityName)
                 .mode(mode)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -89,7 +80,6 @@ public class WeatherService {
                 .cityId(cityId)
                 .units(units)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 
@@ -99,7 +89,6 @@ public class WeatherService {
                 .cityName(cityName)
                 .units(units)
                 .build();
-        log.info("Get response by URL: " + url);
         return httpClient.getResponse(url);
     }
 }

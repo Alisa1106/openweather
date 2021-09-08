@@ -1,14 +1,20 @@
 package org.openweather.models;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Rain {
-    @SerializedName("1h")
+    @JsonProperty("1h")
     private double inHour;
-    @SerializedName("3h")
+    @JsonProperty("3h")
     private double inThreeHours;
 }
