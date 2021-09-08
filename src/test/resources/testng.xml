@@ -25,4 +25,9 @@
             <class name="org.openweather.tests.five_days_three_hours_weather.fiveDaysForecastForCitiesTest"/>
         </classes>
     </test> <!-- Test -->
+    <test name="GismeteoTests">
+        <classes>
+            <class name="org.gismeteo.tests.BrestCurrentWeatherTest"/>
+        </classes>
+    </test> <!-- Test -->
 </suite>
