@@ -21,6 +21,9 @@
         <reportng.version>1.2.2</reportng.version>
         <allure-testng.version>2.14.0</allure-testng.version>
         <jackson-annotations.version>2.12.4</jackson-annotations.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <webdrivermanager.version>5.0.0</webdrivermanager.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
         <plugins>
@@ -102,12 +105,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>${selenium-java.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.0</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
     </dependencies>
 </project>

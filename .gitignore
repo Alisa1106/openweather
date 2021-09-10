@@ -2,5 +2,6 @@
 /target/
 /.allure/
 /xml/
+/html/
 .idea
 *.iml

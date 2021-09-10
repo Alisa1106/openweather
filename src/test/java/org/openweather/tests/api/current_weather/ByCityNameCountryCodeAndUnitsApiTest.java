@@ -1,15 +1,12 @@
-package org.openweather.tests.current_weather;
+package org.openweather.tests.api.current_weather;
 
+import org.openweather.constants.IConstants;
 import org.openweather.models.Current;
-import org.openweather.tests.BaseTest;
+import org.openweather.tests.api.BaseApiTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ByCityNameCountryCodeAndUnitsTest extends BaseTest {
-
-    public static final String LOS_ANGELES_CITY_NAME = "Los Angeles";
-    public static final String USA_COUNTRY_CODE = "840";
-    public static final String CELSIUS_UNITS = "metric";
+public class ByCityNameCountryCodeAndUnitsApiTest extends BaseApiTest implements IConstants {
 
     @Test(description = "Check status code in current weather response by Los Angeles city name, USA country code and Celsius units")
     public void checkStatusCodeTest() {

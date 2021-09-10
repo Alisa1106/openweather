@@ -1,4 +1,4 @@
-package org.openweather.tests;
+package org.openweather.tests.api;
 
 import lombok.extern.log4j.Log4j;
 import org.openweather.client.HttpClient;
@@ -11,7 +11,7 @@ import org.testng.annotations.Listeners;
 
 @Log4j
 @Listeners(TestListener.class)
-public class BaseTest {
+public class BaseApiTest {
 
     HttpClient httpClient;
     protected WeatherService weatherService;

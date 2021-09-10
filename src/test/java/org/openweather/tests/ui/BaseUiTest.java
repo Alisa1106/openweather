@@ -1,9 +1,8 @@
-package org.gismeteo.tests;
+package org.openweather.tests.ui;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j;
-import org.gismeteo.pages.Homepage;
-import org.gismeteo.pages.WeatherInBrestPage;
+import org.gismeteo.steps.CityWeatherSteps;
 import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,11 +14,10 @@ import org.testng.annotations.Listeners;
 
 @Log4j
 @Listeners(TestListener.class)
-public class BaseTest {
+public class BaseUiTest {
 
     WebDriver driver;
-    public Homepage homepage;
-    WeatherInBrestPage weatherInBrestPage;
+    CityWeatherSteps cityWeatherSteps;
 
     @BeforeMethod
     public void initTest(ITestContext context) {
@@ -30,7 +28,7 @@ public class BaseTest {
             log.fatal("ERROR: Chromedriver is not started. " + e.getMessage());
         }
         driver.manage().window().maximize();
-        initPages();
+        initSteps();
         String variable = "driver";
         log.debug("Setting driver into context with variable name " + variable);
         context.setAttribute(variable, driver);
@@ -42,8 +40,7 @@ public class BaseTest {
         driver.quit();
     }
 
-    public void initPages() {
-        homepage = new Homepage(driver);
-        weatherInBrestPage = new WeatherInBrestPage(driver);
+    public void initSteps() {
+        cityWeatherSteps = new CityWeatherSteps(driver);
     }
 }

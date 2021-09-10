@@ -1,7 +1,8 @@
-package org.openweather.tests.five_days_three_hours_weather;
+package org.openweather.tests.api.five_days_three_hours_weather;
 
+import org.openweather.constants.IConstants;
 import org.openweather.models.ForecastFiveDays;
-import org.openweather.tests.BaseTest;
+import org.openweather.tests.api.BaseApiTest;
 import org.openweather.utils.TestParameter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,9 +10,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class fiveDaysForecastForCitiesTest extends BaseTest {
-
-    public static final String CELSIUS_UNITS = "metric";
+public class fiveDaysForecastForCitiesApiTest extends BaseApiTest implements IConstants {
 
     @Test(dataProvider = "Cities", dataProviderClass = TestParameter.class, description = "Check that in forecast 5 days temperature feels like " +
             "at 15.00 less than 35 degrees")
