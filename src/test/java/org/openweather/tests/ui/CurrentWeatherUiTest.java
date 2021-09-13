@@ -1,6 +1,5 @@
 package org.openweather.tests.ui;
 
-import org.openweather.constants.ITestData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
