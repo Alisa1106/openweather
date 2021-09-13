@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Log4j
-public class ChoiceDaysForForecastHeader extends TodayPage {
+public class ChoiceDaysForForecastHeader extends BasePage {
 
     public ChoiceDaysForForecastHeader(WebDriver driver) {
         super(driver);

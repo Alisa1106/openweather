@@ -1,12 +1,12 @@
 package org.openweather.tests.api.current_weather;
 
-import org.openweather.constants.IConstants;
+import org.openweather.constants.ITestData;
 import org.openweather.models.Current;
 import org.openweather.tests.api.BaseApiTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ByCityNameAndCountryCodeApiTest extends BaseApiTest implements IConstants {
+public class ByCityNameAndCountryCodeApiTest extends BaseApiTest {
 
     @Test(description = "Check status code in current weather response by Brest city name and Belarus country code")
     public void checkStatusCodeTest() {

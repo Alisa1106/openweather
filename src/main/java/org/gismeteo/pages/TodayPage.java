@@ -3,15 +3,12 @@ package org.gismeteo.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openweather.utils.Waiters;
 
-public class TodayPage extends BasePage {
+public class TodayPage extends ChoiceDaysForForecastHeader {
 
     public TodayPage(WebDriver driver) {
         super(driver);
     }
-
-    Waiters waiters = new Waiters(driver);
 
     @FindBy(xpath = "//*[contains(@class,'unit_temperature_c')]//*[contains(@class,'js_value')]")
     WebElement currentTemperatureCelsius;

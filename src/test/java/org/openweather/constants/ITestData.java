@@ -1,6 +1,6 @@
 package org.openweather.constants;
 
-public interface IConstants {
+public interface ITestData {
 
     String BREST_CITY_ID = "629634";
     String FAHRENHEIT_UNITS = "imperial";

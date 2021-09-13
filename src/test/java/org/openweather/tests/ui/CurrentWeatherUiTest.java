@@ -1,13 +1,13 @@
 package org.openweather.tests.ui;
 
-import org.openweather.constants.IConstants;
+import org.openweather.constants.ITestData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.sql.Time;
 import java.time.LocalTime;
 
-public class CurrentWeatherUiTest extends BaseUiTest implements IConstants {
+public class CurrentWeatherUiTest extends BaseUiTest {
 
     @Test(description = "Verify to currentTemperature less than 30 celsius degrees")
     public void currentTodayTemperatureTest() {

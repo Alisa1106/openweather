@@ -1,13 +1,13 @@
 package org.openweather.tests.api.current_weather;
 
-import org.openweather.constants.IConstants;
+import org.openweather.constants.ITestData;
 import org.openweather.helper.WeatherToCompareConverter;
 import org.openweather.models.Current;
 import org.openweather.tests.api.BaseApiTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CurrentWeatherForBrestApiTest extends BaseApiTest implements IConstants {
+public class CurrentWeatherForBrestApiTest extends BaseApiTest {
 
     @Test(description = "Check that temperature by Celsius match temperature by Kelvin in responses")
     public void weatherByUnitsTest() {

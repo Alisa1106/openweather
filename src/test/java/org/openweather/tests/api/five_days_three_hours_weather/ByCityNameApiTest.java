@@ -1,13 +1,13 @@
 package org.openweather.tests.api.five_days_three_hours_weather;
 
-import org.openweather.constants.IConstants;
+import org.openweather.constants.ITestData;
 import org.openweather.models.ForecastFiveDays;
 import org.openweather.models.List;
 import org.openweather.tests.api.BaseApiTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ByCityNameApiTest extends BaseApiTest implements IConstants {
+public class ByCityNameApiTest extends BaseApiTest {
 
     @Test(description = "Check status code in forecast 5 days 3 hours weather response by Brest city name and Celsius units")
     public void checkStatusCodeTest() {

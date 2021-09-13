@@ -3,6 +3,7 @@ package org.openweather.tests.api;
 import lombok.extern.log4j.Log4j;
 import org.openweather.client.HttpClient;
 import org.openweather.client.WeatherService;
+import org.openweather.constants.ITestData;
 import org.openweather.utils.Properties;
 import org.openweather.utils.TestListener;
 import org.testng.ITestContext;
@@ -11,7 +12,7 @@ import org.testng.annotations.Listeners;
 
 @Log4j
 @Listeners(TestListener.class)
-public class BaseApiTest {
+public class BaseApiTest implements ITestData {
 
     HttpClient httpClient;
     protected WeatherService weatherService;

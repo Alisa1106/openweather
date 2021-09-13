@@ -4,19 +4,19 @@ import io.qameta.allure.Step;
 import org.gismeteo.pages.ChoiceDaysForForecastHeader;
 import org.gismeteo.pages.NowPage;
 import org.gismeteo.pages.TodayPage;
-import org.gismeteo.pages.Homepage;
+import org.gismeteo.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 
 public class CityWeatherSteps {
 
-    private final Homepage homepage;
+    private final HomePage homePage;
     private final TodayPage todayPage;
     private final NowPage nowPage;
     private final ChoiceDaysForForecastHeader choiceDaysForForecastHeader;
 
 
     public CityWeatherSteps(WebDriver driver) {
-        homepage = new Homepage(driver);
+        homePage = new HomePage(driver);
         todayPage = new TodayPage(driver);
         nowPage = new NowPage(driver);
         choiceDaysForForecastHeader = new ChoiceDaysForForecastHeader(driver);
@@ -24,7 +24,7 @@ public class CityWeatherSteps {
 
     @Step("Go to city {cityName} today forecast page")
     public CityWeatherSteps goToTodayPage(String cityName) {
-        homepage.openPage()
+        homePage.openPage()
                 .waitForPageLoaded()
                 .selectCity(cityName)
                 .waitForPageLoaded();

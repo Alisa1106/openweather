@@ -1,11 +1,12 @@
 package org.openweather.tests.ui;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j;
 import org.gismeteo.steps.CityWeatherSteps;
-import org.openqa.selenium.SessionNotCreatedException;
+import org.gismeteo.utils.ChromeDriverCreator;
+import org.gismeteo.utils.FirefoxDriverCreator;
+import org.gismeteo.utils.WebDriverCreator;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openweather.constants.ITestData;
 import org.openweather.utils.TestListener;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -14,19 +15,16 @@ import org.testng.annotations.Listeners;
 
 @Log4j
 @Listeners(TestListener.class)
-public class BaseUiTest {
+public class BaseUiTest implements ITestData {
 
     WebDriver driver;
     CityWeatherSteps cityWeatherSteps;
+    WebDriverCreator creator;
 
     @BeforeMethod
     public void initTest(ITestContext context) {
-        WebDriverManager.chromedriver().setup();
-        try {
-            driver = new ChromeDriver();
-        } catch (SessionNotCreatedException e) {
-            log.fatal("ERROR: Chromedriver is not started. " + e.getMessage());
-        }
+        creator = new ChromeDriverCreator();
+        driver = creator.createDriver();
         driver.manage().window().maximize();
         initSteps();
         String variable = "driver";

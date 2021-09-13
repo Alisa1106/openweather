@@ -1,4 +1,4 @@
-package org.openweather.utils;
+package org.gismeteo.utils;
 
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.*;

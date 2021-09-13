@@ -1,6 +1,6 @@
 package org.openweather.tests.api.current_weather;
 
-import org.openweather.constants.IConstants;
+import org.openweather.constants.ITestData;
 import org.openweather.tests.api.BaseApiTest;
 import org.openweather.utils.DocumentBuilder;
 import org.testng.Assert;
@@ -11,7 +11,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class ByCityNameWithUnitsApiTest extends BaseApiTest implements IConstants {
+public class ByCityNameWithUnitsApiTest extends BaseApiTest {
 
     @Test(description = "Check status code in current weather response by Brest city name, XML mode and Celsius units")
     public void checkStatusCodeTest() {
