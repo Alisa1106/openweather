@@ -1,6 +1,9 @@
 package org.gismeteo.utils;
 
-public enum ButtonNames {
+import lombok.Getter;
+
+@Getter
+public enum MediumButtonNames {
 
     NOW("Сейчас"),
     TODAY("Сегодня"),
@@ -12,7 +15,7 @@ public enum ButtonNames {
 
     String name;
 
-    ButtonNames(String name) {
+    MediumButtonNames(String name) {
         this.name = name;
     }
 }

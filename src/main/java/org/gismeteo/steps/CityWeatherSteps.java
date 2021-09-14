@@ -5,6 +5,7 @@ import org.gismeteo.pages.ChoiceDaysForForecastHeader;
 import org.gismeteo.pages.NowPage;
 import org.gismeteo.pages.TodayPage;
 import org.gismeteo.pages.HomePage;
+import org.gismeteo.utils.MediumButtonNames;
 import org.openqa.selenium.WebDriver;
 
 public class CityWeatherSteps {
@@ -47,13 +48,19 @@ public class CityWeatherSteps {
     }
 
     @Step("Go to forecast page: {buttonName}")
-    public CityWeatherSteps goToForecastPage(String buttonName) {
-        choiceDaysForForecastHeader.goToNewPage(buttonName);
+    public CityWeatherSteps goToForecastPage(MediumButtonNames buttonName) {
+        choiceDaysForForecastHeader.goToForecastPage(buttonName);
         return this;
     }
 
     @Step("Get current page title")
     public String getTitle() {
         return choiceDaysForForecastHeader.getTitle();
+    }
+
+    @Step("Get current date and day of week on the widget {widgetHeader}")
+    public String getCurrentDateAndWeekDay(String widgetName, String widgetHeader) {
+        return todayPage.moveToWidget(widgetName)
+                .getCurrentDateAndWeekDay(widgetName, widgetHeader);
     }
 }

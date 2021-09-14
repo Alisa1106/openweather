@@ -5,9 +5,11 @@ import org.openweather.client.HttpClient;
 import org.openweather.client.WeatherService;
 import org.openweather.constants.ITestData;
 import org.openweather.utils.Properties;
+import org.openweather.utils.ServiceLogger;
 import org.openweather.utils.TestListener;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
 @Log4j
@@ -17,10 +19,13 @@ public class BaseApiTest implements ITestData {
     HttpClient httpClient;
     protected WeatherService weatherService;
 
-//    @BeforeSuite
-//    public void initLogger() {
-//        ServiceLogger.createLogger();
-//    }
+    @BeforeSuite
+    public void initLogger() {
+        boolean useLog4jJavaConfig = false;
+        if (useLog4jJavaConfig) {
+            ServiceLogger.createLogger();
+        }
+    }
 
     @BeforeMethod
     public void initTest(ITestContext context) {

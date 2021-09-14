@@ -13,5 +13,4 @@ public interface ITestData {
     String XML_MODE = "xml";
     double CELSIUS_AND_KELVIN_DIFFERENCE = 273.15;
     String MINSK_CITY_ID = "625144";
-    String NOW_BUTTON_NAME = "Сейчас";
 }

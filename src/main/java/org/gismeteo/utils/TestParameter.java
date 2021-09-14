@@ -19,13 +19,27 @@ public class TestParameter {
     @DataProvider(name = "Buttons and pages")
     static Object[][] buttons() {
         return new Object[][]{
-                {ButtonNames.NOW.name, "Погода в Бресте сейчас"},
-                {ButtonNames.TODAY.name, "Погода в Бресте"},
-                {ButtonNames.TOMORROW.name, "Погода в Бресте на завтра"},
-                {ButtonNames.THREE_DAYS.name, "Погода в Бресте на 3 дня"},
-                {ButtonNames.TEN_DAYS.name, "Погода в Бресте на 10 дней"},
-                {ButtonNames.TWO_WEEKS.name, "Погода в Бресте на две недели"},
-                {ButtonNames.MONTH.name, "Погода в Бресте на месяц"}
+                {MediumButtonNames.NOW, "Погода в Бресте сейчас"},
+                {MediumButtonNames.TODAY, "Погода в Бресте"},
+                {MediumButtonNames.TOMORROW, "Погода в Бресте на завтра"},
+                {MediumButtonNames.THREE_DAYS, "Погода в Бресте на 3 дня"},
+                {MediumButtonNames.TEN_DAYS, "Погода в Бресте на 10 дней"},
+                {MediumButtonNames.TWO_WEEKS, "Погода в Бресте на две недели"},
+                {MediumButtonNames.MONTH, "Погода в Бресте на месяц"}
+        };
+    }
+
+    @DataProvider(name = "Widgets")
+    static Object[][] widgets() {
+        return new Object[][]{
+                {"wind", "Ветер"},
+                {"roadcondition", "Погода на дорогах"},
+                {"pressure", "Давление"},
+                {"humidity", "Относительная влажность"},
+                {"visibility", "Видимость"},
+                {"sun_moon", "Солнце и Луна"},
+                {"uvb", "Ультрафиолетовый индекс"},
+                {"gm", "Геомагнитная активность"}
         };
     }
 }

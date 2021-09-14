@@ -1,21 +1,21 @@
-package org.gismeteo.utils;
+package org.gismeteo.drivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 @Log4j
-public class ChromeDriverCreator implements WebDriverCreator {
+public class FirefoxDriverCreator implements WebDriverCreator {
 
     @Override
     public WebDriver createDriver() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
         try {
-            return new ChromeDriver();
+            return new FirefoxDriver();
         } catch (SessionNotCreatedException e) {
-            log.fatal("ERROR: ChromeDriver is not started. " + e.getMessage());
+            log.fatal("ERROR: FirefoxDriver is not started. " + e.getMessage());
         }
         return null;
     }

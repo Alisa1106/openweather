@@ -1,10 +1,13 @@
 package org.openweather.tests.ui;
 
 import lombok.extern.log4j.Log4j;
+import org.gismeteo.drivers.RemoteDriverCreator;
 import org.gismeteo.steps.CityWeatherSteps;
-import org.gismeteo.utils.ChromeDriverCreator;
-import org.gismeteo.utils.FirefoxDriverCreator;
-import org.gismeteo.utils.WebDriverCreator;
+import org.gismeteo.steps.GeneralMenuSteps;
+import org.gismeteo.drivers.ChromeDriverCreator;
+import org.gismeteo.drivers.FirefoxDriverCreator;
+import org.gismeteo.utils.Properties;
+import org.gismeteo.drivers.WebDriverCreator;
 import org.openqa.selenium.WebDriver;
 import org.openweather.constants.ITestData;
 import org.openweather.utils.TestListener;
@@ -19,11 +22,21 @@ public class BaseUiTest implements ITestData {
 
     WebDriver driver;
     CityWeatherSteps cityWeatherSteps;
+    GeneralMenuSteps generalMenuSteps;
     WebDriverCreator creator;
 
     @BeforeMethod
     public void initTest(ITestContext context) {
-        creator = new ChromeDriverCreator();
+        switch (new Properties().getBrowser()) {
+            case "firefox":
+                creator = new FirefoxDriverCreator();
+                break;
+            case "remote":
+                creator = new RemoteDriverCreator();
+                break;
+            default:
+                creator = new ChromeDriverCreator();
+        }
         driver = creator.createDriver();
         driver.manage().window().maximize();
         initSteps();
@@ -40,5 +53,6 @@ public class BaseUiTest implements ITestData {
 
     public void initSteps() {
         cityWeatherSteps = new CityWeatherSteps(driver);
+        generalMenuSteps = new GeneralMenuSteps(driver);
     }
 }

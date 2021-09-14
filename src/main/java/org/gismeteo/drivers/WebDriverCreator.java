@@ -1,4 +1,4 @@
-package org.gismeteo.utils;
+package org.gismeteo.drivers;
 
 import org.openqa.selenium.WebDriver;
 

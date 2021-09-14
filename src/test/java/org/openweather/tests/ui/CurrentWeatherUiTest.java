@@ -1,5 +1,7 @@
 package org.openweather.tests.ui;
 
+import org.gismeteo.utils.MediumButtonNames;
+import org.gismeteo.utils.TestParameter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,6 +26,12 @@ public class CurrentWeatherUiTest extends BaseUiTest {
     public void currentNowTemperatureTest() {
         cityWeatherSteps.goToTodayPage(BREST_CITY_NAME_RU);
         double currentTemperature = cityWeatherSteps.getCurrentTemperatureAtTodayPage();
-        Assert.assertEquals(cityWeatherSteps.goToForecastPage(NOW_BUTTON_NAME).getCurrentTemperatureAtNowPage(), currentTemperature);
+        Assert.assertEquals(cityWeatherSteps.goToForecastPage(MediumButtonNames.NOW).getCurrentTemperatureAtNowPage(), currentTemperature);
+    }
+
+    @Test(dataProvider = "Widgets", dataProviderClass = TestParameter.class, description = "Verify that current date and day of week displayed on widgets")
+    public void dateAndWeekDayOnWidgetTest(String widgetName, String widgetHeader) {
+        cityWeatherSteps.goToTodayPage(BREST_CITY_NAME_RU);
+        Assert.assertTrue(cityWeatherSteps.getCurrentDateAndWeekDay(widgetName, widgetHeader).length() > 0);
     }
 }
