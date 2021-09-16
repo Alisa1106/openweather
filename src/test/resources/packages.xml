@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="ClassTestSuite" parallel="classes" thread-count="4">
-    <test name="CurrentInCollection">
+<suite name="PackageSuite" parallel="tests" thread-count="4">
+    <test name="API">
         <classes>
             <class name="org.openweather.tests.api.current_weather.ByCityIdApiTest"/>
             <class name="org.openweather.tests.api.current_weather.ByCityNameAndCountryCodeApiTest"/>
             <class name="org.openweather.tests.api.current_weather.ByCityNameCountryCodeAndUnitsApiTest"/>
             <class name="org.openweather.tests.api.current_weather.ByCityNameWithUnitsApiTest"/>
-        </classes>
-    </test> <!-- Test -->
-    <test name="CurrentInTask">
-        <classes>
             <class name="org.openweather.tests.api.current_weather.CurrentWeatherForBrestApiTest"/>
-        </classes>
-    </test> <!-- Test -->
-    <test name="FiveDaysThreeHoursInCollection">
-        <classes>
             <class name="org.openweather.tests.api.five_days_three_hours_weather.ByCityIdApiTest"/>
             <class name="org.openweather.tests.api.five_days_three_hours_weather.ByCityNameApiTest"/>
+            <class name="org.openweather.tests.api.five_days_three_hours_weather.fiveDaysForecastForCitiesApiTest"/>
         </classes>
     </test> <!-- Test -->
-    <test name="FiveDaysThreeHoursInTask">
+    <test name="UI">
         <classes>
-            <class name="org.openweather.tests.api.five_days_three_hours_weather.fiveDaysForecastForCitiesApiTest"/>
+            <class name="org.openweather.tests.ui.CurrentWeatherUiTest"/>
+            <class name="org.openweather.tests.ui.UiCommonTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

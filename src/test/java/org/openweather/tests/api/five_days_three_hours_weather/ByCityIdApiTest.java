@@ -1,15 +1,13 @@
-package org.openweather.tests.five_days_three_hours_weather.collection;
+package org.openweather.tests.api.five_days_three_hours_weather;
 
+import org.openweather.constants.ITestData;
 import org.openweather.models.ForecastFiveDays;
 import org.openweather.models.List;
-import org.openweather.tests.BaseTest;
+import org.openweather.tests.api.BaseApiTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ByCityIdTest extends BaseTest {
-
-    public static final String MINSK_CITY_ID = "625144";
-    public static final String CELSIUS_UNITS = "metric";
+public class ByCityIdApiTest extends BaseApiTest {
 
     @Test(description = "Check status code in forecast 5 days 3 hours weather response by Minsk city name and Fahrenheit units")
     public void checkStatusCodeTest() {

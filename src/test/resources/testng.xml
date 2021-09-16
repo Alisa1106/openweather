@@ -3,26 +3,32 @@
 <suite name="TestSuite">
     <test name="CurrentInCollection">
         <classes>
-            <class name="org.openweather.tests.current_weather.collection.ByCityIdTest"/>
-            <class name="org.openweather.tests.current_weather.collection.ByCityNameAndCountryCodeTest"/>
-            <class name="org.openweather.tests.current_weather.collection.ByCityNameCountryCodeAndUnitsTest"/>
-            <class name="org.openweather.tests.current_weather.collection.ByCityNameWithUnitsTest"/>
+            <class name="org.openweather.tests.api.current_weather.ByCityIdApiTest"/>
+            <class name="org.openweather.tests.api.current_weather.ByCityNameAndCountryCodeApiTest"/>
+            <class name="org.openweather.tests.api.current_weather.ByCityNameCountryCodeAndUnitsApiTest"/>
+            <class name="org.openweather.tests.api.current_weather.ByCityNameWithUnitsApiTest"/>
         </classes>
     </test> <!-- Test -->
     <test name="CurrentInTask">
         <classes>
-            <class name="org.openweather.tests.current_weather.task.CurrentWeatherForBrestTest"/>
+            <class name="org.openweather.tests.api.current_weather.CurrentWeatherForBrestApiTest"/>
         </classes>
     </test> <!-- Test -->
     <test name="FiveDaysThreeHoursInCollection">
         <classes>
-            <class name="org.openweather.tests.five_days_three_hours_weather.collection.ByCityIdTest"/>
-            <class name="org.openweather.tests.five_days_three_hours_weather.collection.ByCityNameTest"/>
+            <class name="org.openweather.tests.api.five_days_three_hours_weather.ByCityIdApiTest"/>
+            <class name="org.openweather.tests.api.five_days_three_hours_weather.ByCityNameApiTest"/>
         </classes>
     </test> <!-- Test -->
     <test name="FiveDaysThreeHoursInTask">
         <classes>
-            <class name="org.openweather.tests.five_days_three_hours_weather.task.fiveDaysForecastForCitiesTest"/>
+            <class name="org.openweather.tests.api.five_days_three_hours_weather.fiveDaysForecastForCitiesApiTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="GismeteoTests">
+        <classes>
+            <class name="org.openweather.tests.ui.CurrentWeatherUiTest"/>
+            <class name="org.openweather.tests.ui.UiCommonTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

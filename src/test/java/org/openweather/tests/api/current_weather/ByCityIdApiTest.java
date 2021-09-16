@@ -1,14 +1,13 @@
-package org.openweather.tests.current_weather.collection;
+package org.openweather.tests.api.current_weather;
 
+import org.openweather.constants.ITestData;
 import org.openweather.models.Current;
-import org.openweather.tests.BaseTest;
+
+import org.openweather.tests.api.BaseApiTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ByCityIdTest extends BaseTest {
-
-    public static final String BREST_CITY_ID = "629634";
-    public static final String FAHRENHEIT_UNITS = "imperial";
+public class ByCityIdApiTest extends BaseApiTest {
 
     @Test(description = "Check status code in current weather response by Brest city name and Fahrenheit units")
     public void checkStatusCodeTest() {
