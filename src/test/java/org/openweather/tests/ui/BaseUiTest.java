@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j;
 import org.gismeteo.drivers.*;
 import org.gismeteo.steps.CityWeatherSteps;
 import org.gismeteo.steps.GeneralMenuSteps;
+import org.gismeteo.utils.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openweather.constants.ITestData;
 import org.openweather.utils.TestListener;
@@ -22,7 +23,7 @@ public class BaseUiTest implements ITestData {
 
     @BeforeMethod
     public void initTest(ITestContext context) {
-        driver = DriverCreator.create().createDriver();
+        driver = DriverCreator.create(new Properties().getBrowser()).createDriver();
         driver.manage().window().maximize();
         initSteps();
         String variable = "driver";
